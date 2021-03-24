@@ -1,0 +1,29 @@
+diff --git a/Makefile b/Makefile
+index ac38b50ea..365b871a6 100644
+--- a/Makefile
++++ b/Makefile
+@@ -330,7 +330,11 @@ IFLAGS = $(addprefix -I,$(INCLUDE_DIRS))
+ $(EXETARGET): $(OBJECTS) $(RESOURCES) $(MESSAGES) tools/linktrace-to-depfile.pl
+ 	$(VQ)echo "    LINK: $(EXETARGET)"
+ ifneq ($(TARGET)$(SUBTARGET),riscos-elf)
++ifneq ($(TARGET), awtk)
+ 	$(Q)$(CC) -o $(EXETARGET) $(OBJECTS) $(LDFLAGS) > $(DEPROOT)/link-raw.d
++else
++	$(Q) $(AR) cru $(EXETARGET) $(OBJECTS)
++endif
+ else
+ 	$(Q)$(CXX) -o $(EXETARGET:,ff8=,e1f) $(OBJECTS) $(LDFLAGS) > $(DEPROOT)/link-raw.d
+ 	$(Q)$(ELF2AIF) $(EXETARGET:,ff8=,e1f) $(EXETARGET)
+diff --git a/frontends/Makefile.hts b/frontends/Makefile.hts
+index b5af240f1..6f8aa6536 100644
+--- a/frontends/Makefile.hts
++++ b/frontends/Makefile.hts
+@@ -114,7 +114,7 @@ else
+ endif
+ 
+ # valid values for the TARGET
+-VLDTARGET := amiga atari beos framebuffer gtk monkey riscos windows
++VLDTARGET := amiga atari beos framebuffer gtk monkey riscos windows awtk
+ 
+ # Check for valid TARGET
+ ifeq ($(filter $(VLDTARGET),$(TARGET)),)

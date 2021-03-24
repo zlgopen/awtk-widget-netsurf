@@ -1,0 +1,16 @@
+<window theme="html view" >
+  <web_view x="50" y="10" w="-100" h="-60" >
+    <button name="back" x="0" y="10" w="20" h="36" text="<" />
+    <button name="forward" x="30" y="10" w="20" h="36" text=">" />
+    <button name="refresh_stop" x="60" y="10" w="30" h="36" text="X" />
+    <edit name="url" x="100" y="10" w="-150" h="36" text="https://www.netsurf-browser.org/" /> 
+    <button name="go" x="right" y="10" w="40" h="36" text="Go" />
+
+    <html name="web" x="0" y="50" w="-12" h="-90" url="file:///opt/netsurf/testcase/index.html" />
+    <scroll_bar_m name="bar" x="right" y="50" w="6" h="-90" value="0"/>
+
+    <label name="status" x="c" y="bottom" w="90%" h="30" text="status"/>
+  </web_view>
+
+  <button x="c" y="bottom:10" w="50%" h="40" text="Back" on:click="back()"/>
+</window>

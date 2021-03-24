@@ -1,0 +1,5 @@
+<window theme="html" >
+  <html name="web" x="50" y="20" w="90%" h="80%" yslidable="false" url="file:///opt/netsurf/testcase/index.html" >
+  </html>
+  <button x="c" y="bottom:10" w="80" h="40" text="Back" on:click="back()"/>
+</window>
