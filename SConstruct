@@ -16,7 +16,8 @@ APP_CPPPATH=[
 ]
 
 APP_LIBPATH=[
-  NETSURF_ROOT_LIB
+  NETSURF_ROOT_LIB,
+  '/usr/local/opt/openssl@1.1/lib/'
 ]
 
 APP_LIBS=[
