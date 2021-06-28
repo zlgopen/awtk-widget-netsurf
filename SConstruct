@@ -50,4 +50,4 @@ helper.add_cpppath(APP_CPPPATH).add_libpath(APP_LIBPATH).add_libs(APP_LIBS)
 helper.call(DefaultEnvironment)
 
 SConscriptFiles = ['src/SConscript', 'demos/SConscript']
-SConscript(SConscriptFiles)
+helper.SConscript(SConscriptFiles)
