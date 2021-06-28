@@ -10,11 +10,12 @@ env=DefaultEnvironment().Clone()
 SOURCES=Glob('adapter/*.c') + Glob('web_view/*.c') + Glob('*.c') 
 
 EXPORT_DEF=''
-if OS_NAME == 'Windows':
+if OS_NAME == 'Windows' and os.environ['TOOLS_NAME'] == '':
   EXPORT_DEF = ' /DEF:"src/web_view.def" '
 
 if 'BUILD_SHARED' in os.environ and os.environ['BUILD_SHARED'] == 'True':
-  LIBS=['awtk'];
+  LIBS=env['LIBS']
+  LIBS.remove('web_view')
   LINKFLAGS=env['LINKFLAGS'] + EXPORT_DEF 
   env.SharedLibrary(os.path.join(BIN_DIR, 'web_view'), SOURCES, LIBS=LIBS, LINKFLAGS=LINKFLAGS);
 else:
