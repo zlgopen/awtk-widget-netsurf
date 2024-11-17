@@ -1,18 +1,15 @@
-git clone git://git.netsurf-browser.org/buildsystem
-git clone git://git.netsurf-browser.org/libwapcaplet
-git clone git://git.netsurf-browser.org/libparserutils
-git clone git://git.netsurf-browser.org/libhubbub
-git clone git://git.netsurf-browser.org/libcss
-git clone git://git.netsurf-browser.org/libdom
-git clone git://git.netsurf-browser.org/libnsbmp
-git clone git://git.netsurf-browser.org/libnsgif
-git clone git://git.netsurf-browser.org/libsvgtiny
-git clone git://git.netsurf-browser.org/buildsystem.git
-git clone git://git.netsurf-browser.org/libnslog.git
-git clone git://git.netsurf-browser.org/netsurf.git
-git clone git://git.netsurf-browser.org/librosprite.git
-git clone git://git.netsurf-browser.org/libnsutils.git
-git clone git://git.netsurf-browser.org/libutf8proc.git
-git clone git://git.netsurf-browser.org/libnspsl.git
-git clone git://git.netsurf-browser.org/nsgenbind.git
+
+for f in buildsystem libwapcaplet libparserutils libhubbub libcss libdom libnsbmp libnsgif libsvgtiny  \
+  libnslog netsurf librosprite libnsutils libutf8proc libnspsl nsgenbind
+do
+  if [ -e $f ]
+  then
+    echo "$f exist."
+    cd $f  
+    git pull
+    cd ..
+  else  
+    git clone git://git.netsurf-browser.org/$f.git
+  fi  
+done
 
