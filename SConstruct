@@ -22,28 +22,7 @@ APP_LIBPATH=[
 
 APP_LIBS=[
 "web_view",
-"nsawtk",
-"svgtiny",
-"css",
-"dom",
-"hubbub",
-"nsbmp",
-"nsgif",
-"nslog",
-"nspsl",
-"nsutils",
-"parserutils",
-"rosprite",
-"utf8proc",
-"wapcaplet",
-"curl",
-"ssl",
-"crypto",
-"jpeg",
-"png",
-"webp",
-"expat",
-"z"
+"nsawtk"
 ]
 
 helper.add_cpppath(APP_CPPPATH).add_libpath(APP_LIBPATH).add_libs(APP_LIBS)

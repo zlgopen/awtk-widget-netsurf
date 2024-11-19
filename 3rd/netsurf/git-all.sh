@@ -13,3 +13,17 @@ do
   fi  
 done
 
+if [ -e libjpeg ]
+then
+  echo "libjpeg exist"
+else
+  git clone https://github.com/winlibs/libjpeg.git
+fi
+
+if [ -e curl ]
+then
+  echo "curl"
+else
+  git clone https://github.com/curl/curl.git
+fi
+

@@ -89,13 +89,10 @@ static struct gui_bitmap_table awtk_awtk_bitmap_table = {
     .destroy = awtk_bitmap_destroy,
     .set_opaque = awtk_bitmap_set_opaque,
     .get_opaque = framebuffer_awtk_bitmap_get_opaque,
-    .test_opaque = awtk_bitmap_test_opaque,
     .get_buffer = awtk_bitmap_get_buffer,
     .get_rowstride = awtk_bitmap_get_rowstride,
     .get_width = awtk_bitmap_get_width,
     .get_height = awtk_bitmap_get_height,
-    .get_bpp = awtk_bitmap_get_bpp,
-    .save = awtk_bitmap_save,
     .modified = awtk_bitmap_modified,
     .render = awtk_bitmap_render,
 };

@@ -1,13 +1,14 @@
-# awtk-widget-html-view
+# awtk-widget-netsurf
 
 AWTK Web View 控件。
 
 > AWTK Web View 控件是基于 [netsurf](https://www.netsurf-browser.org/) 实现的，在此感谢 [netsurf](https://www.netsurf-browser.org/)的开发者。
 
-> 本项目目前还处于实验阶段。请勿使用。 
+> 本项目目前还处于实验阶段，只在 MacOS 测试。请勿使用。 
 
 界面效果
 
+![](docs/images//ui.png)
 
 ## 准备
 
@@ -18,25 +19,43 @@ git clone https://github.com/zlgopen/awtk.git
 cd awtk; scons; cd -
 ```
 
+1. 获取 netsurf 并编译
+
+```
+cd 3rd/netsurf
+```
+
+> 获取代码
+
+```
+./git-all.sh
+```
+
+> 打补丁
+
+```
+./patch.sh
+```
+
+> 编译
+
+```
+./build.sh 
+```
+
+> 安装数据文件
+
+```bash
+sudo mkdir -p /opt/netsurf
+cp -rf netsurf/frontends/framebuffer/res/* /opt/netsurf
+```
+
 ## 运行
 
 1. 生成示例代码的资源
 
 ```
 python scripts/update_res.py all
-```
-> 也可以使用 Designer 打开项目，之后点击 “打包” 按钮进行生成；
-> 如果资源发生修改，则需要重新生成资源。
-
-如果 PIL 没有安装，执行上述脚本可能会出现如下错误：
-```cmd
-Traceback (most recent call last):
-...
-ModuleNotFoundError: No module named 'PIL'
-```
-请用 pip 安装：
-```cmd
-pip install Pillow
 ```
 
 2. 编译
@@ -47,17 +66,10 @@ pip install Pillow
 scons
 ```
 
-* 编译LINUX FB版本
-
-```
-scons LINUX_FB=true
-```
-
-> 完整编译选项请参考[编译选项](https://github.com/zlgopen/awtk-widget-generator/blob/master/docs/build_options.md)
-
 3. 运行
 
 ```
+export DYLD_LIBRARY_PATH=bin
 ./bin/demo
 ```
 
@@ -95,5 +107,4 @@ scons LINUX_FB=true
   </html_view>
 ```
 
-## 文档
 
