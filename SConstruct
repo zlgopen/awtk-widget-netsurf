@@ -2,8 +2,8 @@
 import scripts.app_helper as app
 
 NETSURF_ROOT = os.path.normpath(os.path.abspath('3rd/netsurf'))
-NETSURF_ROOT_INC = os.path.join(NETSURF_ROOT, 'inst-awtk/include')
-NETSURF_ROOT_LIB = os.path.join(NETSURF_ROOT, 'inst-awtk/lib')
+NETSURF_ROOT_INC = os.path.join(NETSURF_ROOT, 'opt/include')
+NETSURF_ROOT_LIB = os.path.join(NETSURF_ROOT, 'opt/lib')
 NETSURF_ROOT_SRC = os.path.join(NETSURF_ROOT, 'netsurf')
 NETSURF_ROOT_SRC_INC = os.path.join(NETSURF_ROOT, 'netsurf/include')
 

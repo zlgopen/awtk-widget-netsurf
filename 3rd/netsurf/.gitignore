@@ -20,3 +20,7 @@ curl
 libjpeg 
 libnsfb 
 opt
+bison-2.7.1.tar.gz
+bison-2.7.1
+flex-2.6.4.tar.gz
+flex-2.6.4
